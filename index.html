@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Road To JavaScript</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="filters">
+                <div class="filters__main">
+                    <div class="filters__name">
+                        <label for="name">Назва</label>
+                        <input type="text" placeholder="text" id="name">
+                    </div>
+                    <div class="filters__type">
+                        <p class="filters__type_text">Тип Файлу</p>
+                        <div class="filters__type_wrap">
+                            <input type="radio" id="radio1" name="radios" value="all" checked>
+                            <label for="radio1">pdf</label>
+                            <input type="radio" id="radio2" name="radios" value="false" >
+                            <label for="radio2">jpg</label>
+                            <input type="radio" id="radio3" name="radios" value="true" >
+                            <label for="radio3">txt</label>
+                        </div>
+                    </div>
+                    <div class="filters__status">
+                        <p class="filters__status_text">Статус</p>
+                        <div class="filters__status_list">
+                            Всі
+                            <ul class="filters__status_dropdown">
+                                <li class="filters__status_item">New</li>
+                                <li class="filters__status_item">Old</li>
+                                <li class="filters__status_item">Removed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filters__sizes">
+                        <p class="filters__sizes_text">Розмір</p>
+                        <input type="range" min="0" max="5000" id="size" value="0" multiple>
+                        <p class="filters__sizes_text">0 - 5000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="upload__items">
+                <div class="upload__items_item">
+                    <button type="button" class="item__upload"></button>
+                        <div class="upload__items_reference">
+                            <div class="upload__items_reference-name">
+                                <p class="upload__items_reference-title">Назва</p>
+                                <p class="upload__items_reference-text">Test1</p>
+                            </div>
+                            <div class="upload__items_reference-size">
+                                <p class="upload__items_reference-title">Розмір</p>
+                                <p class="upload__items_reference-text">5mb</p>
+                            </div>
+                            <div class="upload__items_reference-filetype">
+                                <p class="upload__items_reference-title">Тип Файлу</p>
+                                <p class="upload__items_reference-text">pdf</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Час додавання</p>
+                                <p class="upload__items_reference-text">12:00 10.05.19</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Статус</p>
+                                <p class="upload__items_reference-text upload__items_reference-text-new">New</p>
+                            </div>
+                        </div>
+                    <button type="button" class="item__delete"></button>
+                </div>
+                <div class="upload__items_item">
+                    <button type="button" class="item__upload"></button>
+                        <div class="upload__items_reference">
+                            <div class="upload__items_reference-name">
+                                <p class="upload__items_reference-title">Назва</p>
+                                <p class="upload__items_reference-text">Long...</p>
+                            </div>
+                            <div class="upload__items_reference-size">
+                                <p class="upload__items_reference-title">Розмір</p>
+                                <p class="upload__items_reference-text">3mb</p>
+                            </div>
+                            <div class="upload__items_reference-filetype">
+                                <p class="upload__items_reference-title">Тип Файлу</p>
+                                <p class="upload__items_reference-text">jpg</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Час додавання</p>
+                                <p class="upload__items_reference-text">11:15 10.05.19</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Статус</p>
+                                <p class="upload__items_reference-text upload__items_reference-text-old">Old</p>
+                            </div>
+                        </div>
+                    <button type="button" class="item__delete"></button>
+                </div>
+                <div class="upload__items_item upload__items_item-no-active">
+                    <button type="button" class="item__upload"></button>
+                        <div class="upload__items_reference">
+                            <div class="upload__items_reference-name">
+                                <p class="upload__items_reference-title">Назва</p>
+                                <p class="upload__items_reference-text">Remo...</p>
+                            </div>
+                            <div class="upload__items_reference-size">
+                                <p class="upload__items_reference-title">Розмір</p>
+                                <p class="upload__items_reference-text">120kb</p>
+                            </div>
+                            <div class="upload__items_reference-filetype">
+                                <p class="upload__items_reference-title">Тип Файлу</p>
+                                <p class="upload__items_reference-text">txt</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Час додавання</p>
+                                <p class="upload__items_reference-text">10:15 10.05.19</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Статус</p>
+                                <p class="upload__items_reference-text upload__items_reference-text-removed">Removed</p>
+                            </div>
+                        </div>
+                    <button type="button" class="item__delete"></button>
+                    <div class="upload__items_item-no-active-mask">
+                        <button type="button" class="item__reply"></button>
+                    </div>
+                </div>
+                <div class="upload__items_item">
+                    <button type="button" class="item__upload"></button>
+                        <div class="upload__items_reference">
+                            <div class="upload__items_reference-name">
+                                <p class="upload__items_reference-title">Назва</p>
+                                <p class="upload__items_reference-text">Long...</p>
+                            </div>
+                            <div class="upload__items_reference-size">
+                                <p class="upload__items_reference-title">Розмір</p>
+                                <p class="upload__items_reference-text">5mb</p>
+                            </div>
+                            <div class="upload__items_reference-filetype">
+                                <p class="upload__items_reference-title">Тип Файлу</p>
+                                <p class="upload__items_reference-text">jpg</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Час додавання</p>
+                                <p class="upload__items_reference-text">14:15 10.05.19</p>
+                            </div>
+                            <div class="upload__items_reference-time">
+                                <p class="upload__items_reference-title">Статус</p>
+                                <p class="upload__items_reference-text upload__items_reference-text-old">Old</p>
+                            </div>
+                        </div>
+                    <button type="button" class="item__delete"></button>
+                </div>
+            </div>
+            <div class="button__upload">
+                <input type="file" id="file" class="button__upload_file" onsubmit="return upload();"/>
+                <button id="button" class="button__upload_btn" name="button" value="Upload" onclick="thisFileUpload();">Добавити файл +</button>
+            </div>
+            <div class="paggination">
+                <ul class="paggination__list">
+                    <li class="paggination__item">1</li>
+                    <li class="paggination__item">2</li>
+                    <li class="paggination__item">3</li>
+                    <li class="paggination__item">4</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="modal__window">
+        <div class="modal__window_question">
+            <div class="modal__window_care"></div>
+            <p class="modal__window_text">Видалити файл ?</p>
+            <button type="button" class="modal__window_delete">Видалити</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
