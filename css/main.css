@@ -189,18 +189,8 @@ body {
   cursor: pointer;
 }
 
-.filters__status_list:hover .filters__status_dropdown {
-  display: block;
-  opacity: 1;
-}
-
-.filters__status_list:hover {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 .filters__status_dropdown {
-  display: block;
+  display: none;
   position: absolute;
   width: 150px;
   left: -1px;
@@ -212,14 +202,12 @@ body {
   opacity: 0;
   -webkit-transition: .5s all;
   transition: .5s all;
-  z-index: 2;
+  z-index: 5;
 }
 
 .filters__status_dropdown li {
   width: 100%;
-  padding-left: 18px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 18px;
   cursor: pointer;
 }
 
@@ -230,6 +218,16 @@ body {
 
 .filters__status_dropdown li:hover {
   font-weight: 700;
+}
+
+.filters__status_dropdown.active {
+  display: block;
+  opacity: 1;
+}
+
+.filters__status_list.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .filters__sizes_text {
@@ -266,6 +264,30 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: #00a7c1;
+}
+
+input[type=range][multiple] {
+  display: block;
+  height: 2em;
+  margin: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+input[type=range][multiple] + input[type=range][multiple] {
+  margin-top: -2em;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  pointer-events: all;
+}
+
+input[type=range]::-moz-range-thumb {
+  pointer-events: all;
+}
+
+input[type=range]::-ms-thumb {
+  pointer-events: all;
 }
 
 input[type=range]::-moz-range-track {
@@ -328,6 +350,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .upload__items_item button {
+  position: relative;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   min-height: 80px;
@@ -335,6 +358,8 @@ input[type=range]:focus::-ms-fill-upper {
   width: 100%;
   border: none;
   outline: none;
+  -webkit-transition: .5s all;
+  transition: .5s all;
   background: #00aeef url(../img/upload.png) no-repeat;
   background-position: center center;
   cursor: pointer;
@@ -342,6 +367,20 @@ input[type=range]:focus::-ms-fill-upper {
 
 .upload__items_item button:focus {
   outline: none;
+}
+
+.upload__items_item button:hover {
+  background-position: 50% 45%;
+}
+
+.upload__items_item button input {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .upload__items_item .item__delete {
@@ -423,10 +462,17 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .button__upload_file {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .button__upload_btn {
+  position: relative;
   width: 100%;
   background: rgba(85, 85, 95, 0.7);
   border: 1px solid #3bafb1;
@@ -546,5 +592,48 @@ input[type=range]:focus::-ms-fill-upper {
 
 .modal__window_delete:focus {
   outline: none;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 24px;
+  border-radius: 20px;
+  background: #bfbfbf;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.switch::before {
+  position: absolute;
+  content: '';
+  left: -6px;
+  top: -6px;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background: #3071a9;
+  -webkit-box-shadow: 0 0 10px 0 #999999;
+          box-shadow: 0 0 10px 0 #999999;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  z-index: 1;
+}
+
+.switch-on {
+  background: #fff;
+  -webkit-box-shadow: inset 0 0 10px 0 #999999;
+          box-shadow: inset 0 0 10px 0 #999999;
+}
+
+.switch-on::before {
+  background: red;
+  left: 30px;
 }
 /*# sourceMappingURL=main.css.map */
