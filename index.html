@@ -11,6 +11,11 @@
     <header class="header">
         <div class="container">
             <div class="switch"></div>
+            <div class="counter-input">
+                <button type="button" class="btn_min">&#45;</button>
+                <input id="counter" class="counter-place" type="text" min="0" max="3" value="0" pattern="\d+" maxlength="3">
+                <button type="button" class="btn_max">&#43;</button>
+            </div>
             <div class="filters">
                 <div class="filters__main">
                     <div class="filters__name">
@@ -41,122 +46,13 @@
                     </div>
                     <div class="filters__sizes">
                         <p class="filters__sizes_text">Розмір</p>
-                        <input id="sizeIn" type="range" min="0" step="1" max="5000" id="size" value="0" multiple data-values="0 5000">
-                        <p class="filters__sizes_text"><span id="valueMin">0</span> - <span class="valueMax">5000</span></p>
+                        <input class="sizeMin" type="range" min="0" step="1" max="5000" value="0"> 
+                        <input class="sizeMax" type="range" min="0" step="1" max="5000" value="5000">                        
+                        <p class="filters__sizes_text"><span class="valueMin">0</span> - <span class="valueMax">5000</span></p>
                     </div>
                 </div>
             </div>
-            <div class="upload__items">
-                <!-- <div class="upload__items_item">
-                    <button type="button" class="item__upload"></button>
-                        <div class="upload__items_reference">
-                            <div class="upload__items_reference-name">
-                                <p class="upload__items_reference-title">Назва</p>
-                                <p class="upload__items_reference-text">Test1</p>
-                            </div>
-                            <div class="upload__items_reference-size">
-                                <p class="upload__items_reference-title">Розмір</p>
-                                <p class="upload__items_reference-text">5mb</p>
-                            </div>
-                            <div class="upload__items_reference-filetype">
-                                <p class="upload__items_reference-title">Тип Файлу</p>
-                                <p class="upload__items_reference-text">pdf</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Час додавання</p>
-                                <p class="upload__items_reference-text">12:00 10.05.19</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Статус</p>
-                                <p class="upload__items_reference-text upload__items_reference-text-new">New</p>
-                            </div>
-                        </div>
-                    <button type="button" class="item__delete"></button>
-                </div> -->
-                <!-- <div class="upload__items_item">
-                    <button type="button" id="buttonSec" name="button" class="item__upload">
-                        <input type="file" id="fileSec">
-                    </button>
-                        <div class="upload__items_reference">
-                            <div class="upload__items_reference-name">
-                                <p class="upload__items_reference-title">Назва</p>
-                                <p class="upload__items_reference-text">Long...</p>
-                            </div>
-                            <div class="upload__items_reference-size">
-                                <p class="upload__items_reference-title">Розмір</p>
-                                <p class="upload__items_reference-text">3mb</p>
-                            </div>
-                            <div class="upload__items_reference-filetype">
-                                <p class="upload__items_reference-title">Тип Файлу</p>
-                                <p class="upload__items_reference-text">jpg</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Час додавання</p>
-                                <p class="upload__items_reference-text">11:15 10.05.19</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Статус</p>
-                                <p class="upload__items_reference-text upload__items_reference-text-old">Old</p>
-                            </div>
-                        </div>
-                    <button type="button" class="item__delete"></button>
-                </div> -->
-                <!-- <div class="upload__items_item upload__items_item-no-active">
-                    <button type="button" class="item__upload"></button>
-                        <div class="upload__items_reference">
-                            <div class="upload__items_reference-name">
-                                <p class="upload__items_reference-title">Назва</p>
-                                <p class="upload__items_reference-text">Remo...</p>
-                            </div>
-                            <div class="upload__items_reference-size">
-                                <p class="upload__items_reference-title">Розмір</p>
-                                <p class="upload__items_reference-text">120kb</p>
-                            </div>
-                            <div class="upload__items_reference-filetype">
-                                <p class="upload__items_reference-title">Тип Файлу</p>
-                                <p class="upload__items_reference-text">txt</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Час додавання</p>
-                                <p class="upload__items_reference-text">10:15 10.05.19</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Статус</p>
-                                <p class="upload__items_reference-text upload__items_reference-text-removed">Removed</p>
-                            </div>
-                        </div>
-                    <button type="button" class="item__delete"></button>
-                    <div class="upload__items_item-no-active-mask">
-                        <button type="button" class="item__reply"></button>
-                    </div>
-                </div> -->
-                <!-- <div class="upload__items_item">
-                    <button type="button" class="item__upload"></button>
-                        <div class="upload__items_reference">
-                            <div class="upload__items_reference-name">
-                                <p class="upload__items_reference-title">Назва</p>
-                                <p class="upload__items_reference-text">Long...</p>
-                            </div>
-                            <div class="upload__items_reference-size">
-                                <p class="upload__items_reference-title">Розмір</p>
-                                <p class="upload__items_reference-text">5mb</p>
-                            </div>
-                            <div class="upload__items_reference-filetype">
-                                <p class="upload__items_reference-title">Тип Файлу</p>
-                                <p class="upload__items_reference-text">jpg</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Час додавання</p>
-                                <p class="upload__items_reference-text">14:15 10.05.19</p>
-                            </div>
-                            <div class="upload__items_reference-time">
-                                <p class="upload__items_reference-title">Статус</p>
-                                <p class="upload__items_reference-text upload__items_reference-text-old">Old</p>
-                            </div>
-                        </div>
-                    <button type="button" class="item__delete"></button>
-                </div> -->
-            </div>
+            <div class="upload__items"></div>
             <div class="button__upload">
                 <button id="button" class="button__upload_btn" name="button" value="Upload">
                         <input type="file" id="file" class="button__upload_file"/>
@@ -175,19 +71,14 @@
     </header>
     <div class="modal__window">
         <div class="modal__window_question">
+            <div class="modal_close">
+                &#x2718;
+            </div>
             <div class="modal__window_care"></div>
             <p class="modal__window_text">Видалити файл ?</p>
-            <button type="button" class="modal__window_delete">Видалити</button>
+            <button type="button" class="modal__window_delete" id="delcar">Видалити</button>
         </div>
     </div>
-
-
-
-
-
-
-
-
 
     <script src="js/main.js"></script>
 </body>
