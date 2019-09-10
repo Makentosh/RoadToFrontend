@@ -122,4 +122,4 @@ let vas = new CustomEvent ('vasya', {
   detail: {
     text: 'ON'
   }
-})
+});
