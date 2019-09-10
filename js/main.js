@@ -35,7 +35,7 @@ function setVariables(obj) {
                   <p class="upload__items_reference-text upload__items_reference-text-old">${obj.status}</p>
               </div>
           </div>
-      <button type="button" class="item__delete" id="${obj.id}"></button>
+      <button type="button" class="item__delete" id="delete"></button>
   </div>
   `
 
@@ -176,23 +176,23 @@ let modalClose = document.querySelector('.modal_close');
 
 document.addEventListener('click', (e) => {
   if(e.target && e.target.classList == 'item__delete'){
+    
     let item = document.querySelector('.upload__items_item');
     let remBtn = document.querySelector('.item__delete')
-    if (item.id === remBtn.id) {
-      modalOpen();
-      item.remove();
-    } else {
-      console.log(item.id)
-    }
     
-  //   let modalOpen = new CustomEvent ('modal-open', {
-  //     detail: {
-  //       id: 22
-  //     }
-  // });
-  //   document.dispatchEvent(modalOpen);
+    let modalOpen = new CustomEvent ('modal-open', {
+      detail: {
+        id: 22
+      }
+    });
+
+    
+    document.dispatchEvent(modalOpen);
+    
    }
 });
+
+
 
 
 document.addEventListener('modal-open', e => modalOpen(e))
