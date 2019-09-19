@@ -185,7 +185,9 @@ document.addEventListener('click', (e) => {
         id: 22
       }
     });
-
+    modalDel.addEventListener('click', (y) => {
+      item.remove();
+    });
     
     document.dispatchEvent(modalOpen);
     
@@ -233,13 +235,22 @@ let max = document.querySelector('.btn_max')
 let min = document.querySelector('.btn_min')
 
 max.addEventListener('click', () => {
+  el.innerHTML = el.innerHTML + fileBlock;
   count.value++;
+
 })
-min.addEventListener('click', () => {
-  count.value--;
-  for (count.value; count.value < 0; ) {
+min.addEventListener('click', (e) => {
+
+  let item = document.querySelector('.upload__items_item');
+
+
+  if (count.value <= 0) {
     count.value = 0;
   }
+  count.value--;
+  item.remove();
+  
+
 })
 //проверка ввода в инпут
 document.getElementById("counter").onkeypress= function(event){
@@ -250,3 +261,44 @@ document.getElementById("counter").onkeypress= function(event){
   
 
 
+
+  let fileBlock =
+  `
+  <div class="upload__items_item" id="">
+        <button type="button" id="buttonSec" name="button" class="item__upload">
+          <input type="file" id="fileSec">
+        </button>
+          <div class="upload__items_reference">
+              <div class="upload__items_reference-name">
+                  <p class="upload__items_reference-title">Назва</p>
+                  <p class="upload__items_reference-text"></p>
+              </div>
+              <div class="upload__items_reference-size">
+                  <p class="upload__items_reference-title">Розмір</p>
+                  <p class="upload__items_reference-text"></p>
+              </div>
+              <div class="upload__items_reference-filetype">
+                  <p class="upload__items_reference-title">Тип Файлу</p>
+                  <p class="upload__items_reference-text"></p>
+              </div>
+              <div class="upload__items_reference-time">
+                  <p class="upload__items_reference-title">Час додавання</p>
+                  <p class="upload__items_reference-text"></p>
+              </div>
+              <div class="upload__items_reference-time">
+                  <p class="upload__items_reference-title">Статус</p>
+                  <p class="upload__items_reference-text upload__items_reference-text-old"></p>
+              </div>
+          </div>
+      <button type="button" class="item__delete" id="delete"></button>
+  </div>
+  `
+
+  let el = document.querySelector('.upload__items');
+
+  var v = 0;
+
+  // while (v <= 5) {
+  //   el.innerHTML = el.innerHTML + fileBlock;
+  //   v++;
+  // }
