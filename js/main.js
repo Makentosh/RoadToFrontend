@@ -298,7 +298,15 @@ document.getElementById("counter").onkeypress= function(event){
 
   var v = 0;
 
+<<<<<<< HEAD
   // while (v <= 5) {
   //   el.innerHTML = el.innerHTML + fileBlock;
   //   v++;
   // }
+=======
+let vas = new CustomEvent ('vasya', {
+  detail: {
+    text: 'ON'
+  }
+});
+>>>>>>> b1f4a70dfce6dbfff2d4cfb86459f4688ab683cb
