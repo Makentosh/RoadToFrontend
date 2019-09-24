@@ -296,15 +296,4 @@ document.getElementById("counter").onkeypress= function(event){
 
   let el = document.querySelector('.upload__items');
 
-  let v = 0;
-
-  // while (v <= 5) {
-  //   el.innerHTML = el.innerHTML + fileBlock;
-  //   v++;
-  // }
-
-let vas = new CustomEvent ('vasya', {
-  detail: {
-    text: 'ON'
-  }
-});
+  let vasya = 500;
