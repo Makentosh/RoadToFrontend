@@ -296,6 +296,7 @@ document.getElementById("counter").onkeypress = function(event){
 
   let el = document.querySelector('.upload__items');
 
+<<<<<<< HEAD
   let v = 0;
 
   // while (v <= 5) {
@@ -374,3 +375,6 @@ calcKeys.forEach(function(section) {
      return false;
    };
    
+=======
+  let vasya = 500;
+>>>>>>> 4376c4d79c950054523b42dee1f05bb634f906b0
