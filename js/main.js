@@ -253,7 +253,7 @@ min.addEventListener('click', (e) => {
 
 })
 //проверка ввода в инпут
-document.getElementById("counter").onkeypress= function(event){
+document.getElementById("counter").onkeypress = function(event){
    event = event || window.event;
    if (event.charCode && (event.charCode < 48 || event.charCode > 57))
     return false;
@@ -303,8 +303,74 @@ document.getElementById("counter").onkeypress= function(event){
   //   v++;
   // }
 
-let vas = new CustomEvent ('vasya', {
-  detail: {
-    text: 'ON'
-  }
-});
+let salary,
+    money,
+    bonus,
+    out,
+    pay,
+    kredit,
+    allSalary,
+    allOut,
+    end,
+    priceDay;
+
+  salary = document.querySelector('#salary');
+  money = document.querySelector('#money');
+  bonus = document.querySelector('#bonus');
+  out = document.querySelector('#out');
+  pay = document.querySelector('#pay');
+  kredit = document.querySelector('#kredit');
+  allSalary = document.querySelector('#allSalary');
+  allOut = document.querySelector('#allOut');
+  myMoney = document.querySelector('#myMoney');
+  priceDay = document.querySelector('#priceDay');
+
+  document.addEventListener('keyup', () => {
+    allSalary.value = Number(salary.value) + Number(money.value) + Number(bonus.value);
+    allOut.value = Number(out.value) + Number(pay.value) + Number(kredit.value);
+    myMoney.value = Number(allSalary.value) - Number(allOut.value);
+  
+    priceDay.value = Math.round(Number(myMoney.value) / 31);
+  });
+
+
+
+
+  //calculator second
+  let calc = document.querySelector('.testing');
+  let calcDisplay = document.querySelector('.calculator__display');
+  let calcKeys = document.querySelectorAll('.calculator__key');
+  let calcButton  = document.querySelectorAll('.calculator__button');
+  let calcEqual = document.querySelector('.calculator__key--equal');
+  let calcPower = document.querySelector('.calculator__power');
+
+
+   // INIT CALC KEYS
+  //  calcKeys.each(function () {
+  //   var current = $(this).attr('value');
+  //   $(this).text(current);
+  //     });
+
+// ADD NUMBERS TO INPUT
+calcKeys.forEach(function(section) {
+  section.addEventListener('click', function (e) {
+    let current = this.getAttribute('value');
+
+  })  
+})
+
+// calcButton.on('click', function () {
+//   calcDisplay.val( calcDisplay.val() + $(this).attr('value') );
+// });
+
+  calcButton.addEventListener('click',(fff) => {
+    calcDisplay.value(calcDisplay.value + this.getAttribute('value'));
+
+  })
+
+  document.getElementById("result").onkeypress = function(event){
+    event = event || window.event;
+    if (event.charCode && (event.charCode < 48 || event.charCode > 57))
+     return false;
+   };
+   

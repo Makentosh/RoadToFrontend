@@ -71,6 +71,92 @@
             </div>
         </div>
     </header>
+    <section class="calculator">
+        <div class="container">
+            <div class="calculator__content">
+                <div class="calculator__wrap">
+                    <div class="calculator__inner">
+                        <h2>Зарплата</h2>
+                        <input type="text" id="salary" min="0" max="3"  pattern="\d+" class="input">
+                    </div>
+                    <div class="calculator__inner" >
+                        <h2>Додатковий дохід</h2>
+                        <input type="text" id="money" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Бонус</h2>
+                        <input type="text" id="bonus" min="0" max="3"  pattern="\d+">
+                    </div>
+                </div>
+                <div class="calculator__wrap">
+                    <div class="calculator__inner">
+                        <h2>Витрати</h2>
+                        <input type="text" id="out" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Покупки</h2>
+                        <input type="text" id="pay" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Кредит</h2>
+                        <input type="text" id="kredit" min="0" max="3"  pattern="\d+">
+                    </div>
+                </div>
+                <div class="calculator__wrap">
+                    <div class="calculator__inner">
+                        <h2>Дохід</h2>
+                        <input readonly id="allSalary" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Витратили</h2>
+                        <input readonly id="allOut" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Залишок</h2>
+                        <input readonly id="myMoney" min="0" max="3"  pattern="\d+">
+                    </div>
+                </div>
+            </div>
+            <div class="finaly">
+                <h2>Скільки можна витрачати в день</h2>
+                <input readonly id="priceDay" min="0" max="3"  pattern="\d+">
+            </div>
+        </div>   
+    </section>
+
+
+    <section class="testing">
+        <div class="container">
+            <div class="test__inner">
+                <div class="input__wrap">
+                    <input class="calculator__display" id="result" type="text" disabled />
+                </div>
+                <div class="numbers__inner">
+                    <div class="numbers">
+                        <button type="button" value="1" id="one" class="calculator__key calculator__button">1</button>
+                        <button type="button" value="2" id="two" class="calculator__key calculator__button">2</button>
+                        <button type="button" value="3" id="three" class="calculator__key calculator__button">3</button>
+                        <button type="button" value="4" id="four" class="calculator__key calculator__button">4</button>
+                        <button type="button" value="5" id="five" class="calculator__key calculator__button">5</button>
+                        <button type="button" value="6" id="six" class="calculator__key calculator__button">6</button>
+                        <button type="button" value="7" id="seven" class="calculator__key calculator__button">7</button>
+                        <button type="button" value="8" id="eight" class="calculator__key calculator__button">8</button>
+                        <button type="button" value="9" id="nine" class="calculator__key calculator__button">9</button>
+                        <button type="button" value="=" id="sum" class="calculator__key calculator__key--equal">=</button>
+                        <button type="button" value="0" id="zero" class="calculator__key calculator__button"></button>
+                        <button type="button" value="." id="coma" class="calculator__key calculator__button">.</button>
+                    </div>
+                    <div class="instruments">
+                        <button type="button" value="+" id="plus"  class="calculator__key calculator__button">+</button>
+                        <button type="button" value="-" id="minus"  class="calculator__key calculator__button">-</button>
+                        <button type="button" value="*" id="multi"  class="calculator__key calculator__button">&#xD7;</button>
+                        <button type="button" value="/" id="divide" class="calculator__key calculator__button">&#247;</button>
+                        <button type="button" value="^3" class="calculator__key calculator__power"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="modal__window">
         <div class="modal__window_question">
             <div class="modal_close">
