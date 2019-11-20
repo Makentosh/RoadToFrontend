@@ -263,8 +263,7 @@ document.getElementById("counter").onkeypress = function(event){
 
 
   let fileBlock =
-  `
-  <div class="upload__items_item" id="">
+  `<div class="upload__items_item" id="">
         <button type="button" id="buttonSec" name="button" class="item__upload">
           <input type="file" id="fileSec">
         </button>
@@ -291,12 +290,10 @@ document.getElementById("counter").onkeypress = function(event){
               </div>
           </div>
       <button type="button" class="item__delete" id="delete"></button>
-  </div>
-  `
+  </div>`
 
   let el = document.querySelector('.upload__items');
 
-<<<<<<< HEAD
   let v = 0;
 
   // while (v <= 5) {
@@ -338,36 +335,61 @@ let salary,
 
 
   //calculator second
+
+// INIT CALC KEYS
   let calc = document.querySelector('.testing');
   let calcDisplay = document.querySelector('.calculator__display');
   let calcKeys = document.querySelectorAll('.calculator__key');
   let calcButton  = document.querySelectorAll('.calculator__button');
   let calcEqual = document.querySelector('.calculator__key--equal');
   let calcPower = document.querySelector('.calculator__power');
+  let calcClear = document.querySelector('.calculator__clear');
+  let backSpace = document.querySelector('.calculator__backspace');
 
 
-   // INIT CALC KEYS
-  //  calcKeys.each(function () {
-  //   var current = $(this).attr('value');
-  //   $(this).text(current);
-  //     });
 
 // ADD NUMBERS TO INPUT
-calcKeys.forEach(function(section) {
-  section.addEventListener('click', function (e) {
-    let current = this.getAttribute('value');
-
-  })  
+calcKeys.forEach(function(key) {
+  let current = key.getAttribute('value');
+  // console.log(current)
+  key.textContent = current
 })
 
+
+// ADD NUMBERS TO INPUT
 // calcButton.on('click', function () {
 //   calcDisplay.val( calcDisplay.val() + $(this).attr('value') );
 // });
 
-  calcButton.addEventListener('click',(fff) => {
-    calcDisplay.value(calcDisplay.value + this.getAttribute('value'));
+calcButton.forEach((btn) => {
 
+  btn.addEventListener('click',() => {
+    calcDisplay.value = (calcDisplay.value + btn.getAttribute('value'));
   })
+
+  // console.log(calcDisplay.value)
+})
+
+// clear input
+
+calcClear.addEventListener('click', () => {
+  calcDisplay.value = ''
+})
+
+
+calcPower.addEventListener('click', () => {
+  calcDisplay.value = eval(calcDisplay.value)
+
+})
+
+
+// BACKSPACE BUTTON
+
+backSpace.addEventListener('click', () => {
+  calcDisplay.value = (calcDisplay.value.substring((0, calcDisplay.value.length-2)))
+})
+
+
 
   document.getElementById("result").onkeypress = function(event){
     event = event || window.event;
@@ -375,6 +397,3 @@ calcKeys.forEach(function(section) {
      return false;
    };
    
-=======
-  let vasya = 500;
->>>>>>> 4376c4d79c950054523b42dee1f05bb634f906b0
