@@ -9,33 +9,37 @@ let fileArray = [];
 function setVariables(obj) {
   let fileBlock =
   `
-  <div class="upload__items_item" id="${obj.id}">
-        <button type="button" id="buttonSec" name="button" class="item__upload">
+  <div class="upload-items__item" id="${obj.id}">
+      <div class="upload-item">
+        <button type="button" id="buttonSec" class="btn__upload">
           <input type="file" id="fileSec">
         </button>
-          <div class="upload__items_reference">
-              <div class="upload__items_reference-name">
-                  <p class="upload__items_reference-title">Назва</p>
-                  <p class="upload__items_reference-text">${obj.name}</p>
+         <div class="upload-item__reference">
+              <div class="upload-item__reference-name">
+                  <p class="upload-item__reference-title">Назва</p>
+                  <p class="upload-item__reference-text">${obj.name}</p>
               </div>
-              <div class="upload__items_reference-size">
-                  <p class="upload__items_reference-title">Розмір</p>
-                  <p class="upload__items_reference-text">${obj.size}</p>
+              <div class="upload-item__reference-size">
+                  <p class="upload-item__reference-title">Розмір</p>
+                  <p class="upload-item__reference-text">${obj.size}</p>
               </div>
-              <div class="upload__items_reference-filetype">
-                  <p class="upload__items_reference-title">Тип Файлу</p>
-                  <p class="upload__items_reference-text">${obj.type}</p>
+              <div class="upload-item__reference-filetype">
+                  <p class="upload-item__reference-title">Тип Файлу</p>
+                  <p class="upload-item__reference-text">${obj.type}</p>
               </div>
-              <div class="upload__items_reference-time">
-                  <p class="upload__items_reference-title">Час додавання</p>
-                  <p class="upload__items_reference-text">${obj.date}</p>
+              <div class="upload-item__reference-time">
+                  <p class="uupload-item__reference-title">Час додавання</p>
+                  <p class="upload-item__reference-text">${obj.date}</p>
               </div>
-              <div class="upload__items_reference-time">
-                  <p class="upload__items_reference-title">Статус</p>
-                  <p class="upload__items_reference-text upload__items_reference-text-old">${obj.status}</p>
+              <div class="upload-item__reference-time">
+                  <p class="upload-item__reference-title">Статус</p>
+                  <p class="upload-item__reference-text upload-item__reference-text-old">${obj.status}</p>
               </div>
           </div>
-      <button type="button" class="item__delete" id="delete"></button>
+      </div>
+      
+         
+      <button type="button" class="upload-item__delete" data-index="${obj.id}"></button>
   </div>
   `
 
@@ -54,7 +58,7 @@ fileInput.addEventListener('change', (e) => {
   day = Data.getDate();
   hours = Data.getHours();
   minutes = Data.getMinutes();
-  
+
   // let newStatus = 'New';
   // let oldStatus = 'Old';
   // let removedStatus = 'Removed';
@@ -72,7 +76,7 @@ fileInput.addEventListener('change', (e) => {
 
   let div = document.createElement('div');
   div.innerHTML = setVariables(fileObj);
-  div.classList.add('upload_item');
+  div.classList.add('upload-item');
 
   insertHtml(div)
 })
@@ -83,29 +87,16 @@ fileInput.addEventListener('change', (e) => {
     return v.toString(16);
   });
 }
-// btn.addEventListener('click', (e) => fileInput.click());
+
 
 function insertHtml(docElem) {
-  let divToChange = document.querySelector('.upload__items');
-  console.log(divToChange);
+  let divToChange = document.querySelector('.upload-items');
   divToChange.appendChild(docElem);
 }
 
 
 // -----double range input
-// let elm = document.querySelector('#sizeIn');
-// let container = elm.parentNode;
-// let values = elm.getAttribute('data-values').split(' ');
 
-// values.forEach(function (value, i, values) {
-//   let rangePart = elm.cloneNode();
-//   rangePart.type = 'range';
-//   rangePart.removeAttribute('data-values');
-//   rangePart.value = value;
-//   rangePart = container.insertBefore(rangePart, elm);
-// });
-
-// elm.remove();
 
 let sizeMin = document.querySelector('.sizeMin');
 let sizeMax = document.querySelector('.sizeMax');
@@ -117,17 +108,15 @@ let maxSize = document.querySelector('.valueMax');
 
 sizeMin.addEventListener('input', () => {
   minSize.innerHTML = sizeMin.value;
-  // console.log(maxSize);
-})
+});
 sizeMax.addEventListener('input', () => {
   maxSize.innerHTML = sizeMax.value;
-  // console.log(maxSize);
-})
+});
 
 //dropown click
 let sortList = document.querySelector('.filters__status_list');
 let dropdown = document.querySelector('.filters__status_dropdown');
-let dropdownItem = document.querySelector('.filters__status_item')
+let dropdownItem = document.querySelector('.filters__status_item');
 
 
 sortList.addEventListener('click', () => {
@@ -146,23 +135,16 @@ function initSwitcher() {
   let isOn = false;
   switcher.addEventListener('click', () => {
     // switcher.classList.toggle('switch-on');
-    isOn 
-    ? switcher.classList.add('switch-on') 
+    isOn
+    ? switcher.classList.add('switch-on')
     : switcher.classList.remove('switch-on');
     isOn = !isOn;
-    
-    console.log(isOn);
+
   })
-  
+
 }
 initSwitcher();
 
-let vas = new CustomEvent ('myevent', {
-    detail: {
-      text: 'Do you realy want off?',
-      textTwo: 'Do you realy want on?'
-    }
-})
 
 // close button  and modal
 
@@ -176,21 +158,17 @@ let modalClose = document.querySelector('.modal_close');
 
 document.addEventListener('click', (e) => {
   if(e.target && e.target.classList == 'item__delete'){
-    
-    let item = document.querySelector('.upload__items_item');
-    let remBtn = document.querySelector('.item__delete')
-    
-    let modalOpen = new CustomEvent ('modal-open', {
-      detail: {
-        id: 22
-      }
-    });
+
+    let item = document.querySelector('.upload__items-item');
+    let remBtn = document.querySelector('.item__delete');
+
+
     modalDel.addEventListener('click', (y) => {
       item.remove();
     });
-    
+
     document.dispatchEvent(modalOpen);
-    
+
    }
 });
 
@@ -204,7 +182,7 @@ function modalOpen(e) {
   modal.style.cssText = `
   display: flex;
   opacity: 1;`;
-    
+
 }
 
 
@@ -229,36 +207,36 @@ modalClose.addEventListener('click', () =>{
 
 //input number
 
-
-let count = document.querySelector('#counter');
-let max = document.querySelector('.btn_max')
-let min = document.querySelector('.btn_min')
-
-max.addEventListener('click', () => {
-  el.innerHTML = el.innerHTML + fileBlock;
-  count.value++;
-
-})
-min.addEventListener('click', (e) => {
-
-  let item = document.querySelector('.upload__items_item');
-
-
-  if (count.value <= 0) {
-    count.value = 0;
-  }
-  count.value--;
-  item.remove();
-  
-
-})
+//
+// let count = document.querySelector('#counter');
+// let max = document.querySelector('.btn_max')
+// let min = document.querySelector('.btn_min')
+//
+// max.addEventListener('click', () => {
+//   el.innerHTML = el.innerHTML + fileBlock;
+//   count.value++;
+//
+// })
+// min.addEventListener('click', (e) => {
+//
+//   let item = document.querySelector('.upload__items_item');
+//
+//
+//   if (count.value <= 0) {
+//     count.value = 0;
+//   }
+//   count.value--;
+//   item.remove();
+//
+//
+// })
 //проверка ввода в инпут
-document.getElementById("counter").onkeypress = function(event){
-   event = event || window.event;
-   if (event.charCode && (event.charCode < 48 || event.charCode > 57))
-    return false;
-  };
-  
+// document.getElementById("counter").onkeypress = function(event){
+//    event = event || window.event;
+//    if (event.charCode && (event.charCode < 48 || event.charCode > 57))
+//     return false;
+//   };
+
 
 
 
@@ -327,7 +305,7 @@ let salary,
     allSalary.value = Number(salary.value) + Number(money.value) + Number(bonus.value);
     allOut.value = Number(out.value) + Number(pay.value) + Number(kredit.value);
     myMoney.value = Number(allSalary.value) - Number(allOut.value);
-  
+
     priceDay.value = Math.round(Number(myMoney.value) / 31);
   });
 
@@ -396,4 +374,4 @@ backSpace.addEventListener('click', () => {
     if (event.charCode && (event.charCode < 48 || event.charCode > 57))
      return false;
    };
-   
+

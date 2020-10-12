@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Road To JavaScript</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="switch"></div>
+<!--            <div class="counter-input">-->
+<!--                <button type="button" class="btn_min">&#45;</button>-->
+<!--                <input id="counter" class="counter-place" type="text" min="0" max="3" value="0" pattern="\d+" maxlength="3">-->
+<!--                <button type="button" class="btn_max">&#43;</button>-->
+<!--            </div>-->
+            <div class="filters">
+                <div class="filters__main">
+                    <div class="filters__name">
+                        <label for="name">Назва</label>
+                        <input type="text" placeholder="text" id="name">
+                    </div>
+                    <div class="filters__type">
+                        <p class="filters__type_text">Тип Файлу</p>
+                        <div class="filters__type_wrap">
+                            <input type="radio" id="radio1" name="radios" value="all" checked>
+                            <label for="radio1">pdf</label>
+                            <input type="radio" id="radio2" name="radios" value="false" >
+                            <label for="radio2">jpg</label>
+                            <input type="radio" id="radio3" name="radios" value="true" >
+                            <label for="radio3">txt</label>
+                        </div>
+                    </div>
+                    <div class="filters__status">
+                        <p class="filters__status_text">Статус</p>
+                        <div class="filters__status_list">
+                            Всі
+                            <ul class="filters__status_dropdown">
+                                <li class="filters__status_item">New</li>
+                                <li class="filters__status_item">Old</li>
+                                <li class="filters__status_item">Removed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filters__sizes">
+                        <p class="filters__sizes_text">Розмір</p>
+                        <input class="sizeMin" type="range" min="0" step="1" max="5000" value="0">
+                        <input class="sizeMax" type="range" min="0" step="1" max="5000" value="5000">
+                        <p class="filters__sizes_text"><span class="valueMin">0</span> - <span class="valueMax">5000</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-items">
+
+            </div>
+            <div class="button__upload">
+                <button id="button" class="button__upload_btn" name="button" value="Upload">
+                        <input type="file" id="file"  multiple class="button__upload_file"/>
+                    Добавити файл +
+                </button>
+            </div>
+            <div class="paggination">
+                <ul class="paggination__list">
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="calculator">
+        <div class="container">
+            <div class="calculator__content">
+                <div class="calculator__wrap">
+                    <div class="calculator__inner">
+                        <h2>Зарплата</h2>
+                        <input type="text" id="salary" min="0" max="3"  pattern="\d+" class="input">
+                    </div>
+                    <div class="calculator__inner" >
+                        <h2>Додатковий дохід</h2>
+                        <input type="text" id="money" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Бонус</h2>
+                        <input type="text" id="bonus" min="0" max="3"  pattern="\d+">
+                    </div>
+                </div>
+                <div class="calculator__wrap">
+                    <div class="calculator__inner">
+                        <h2>Витрати</h2>
+                        <input type="text" id="out" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Покупки</h2>
+                        <input type="text" id="pay" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Кредит</h2>
+                        <input type="text" id="kredit" min="0" max="3"  pattern="\d+">
+                    </div>
+                </div>
+                <div class="calculator__wrap">
+                    <div class="calculator__inner">
+                        <h2>Дохід</h2>
+                        <input readonly id="allSalary" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Витратили</h2>
+                        <input readonly id="allOut" min="0" max="3"  pattern="\d+">
+                    </div>
+                    <div class="calculator__inner">
+                        <h2>Залишок</h2>
+                        <input readonly id="myMoney" min="0" max="3"  pattern="\d+">
+                    </div>
+                </div>
+            </div>
+            <div class="finaly">
+                <h2>Скільки можна витрачати в день</h2>
+                <input readonly id="priceDay" min="0" max="3"  pattern="\d+">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testing">
+        <div class="container">
+            <div class="test__inner">
+                <div class="input__wrap">
+                    <input class="calculator__display" id="result" type="text" disabled />
+                </div>
+                <div class="numbers__inner">
+                    <div class="numbers">
+                        <button type="button" value="1" id="one" class="calculator__key calculator__button"></button>
+                        <button type="button" value="2" id="two" class="calculator__key calculator__button"></button>
+                        <button type="button" value="3" id="three" class="calculator__key calculator__button"></button>
+                        <button type="button" value="4" id="four" class="calculator__key calculator__button"></button>
+                        <button type="button" value="5" id="five" class="calculator__key calculator__button"></button>
+                        <button type="button" value="6" id="six" class="calculator__key calculator__button"></button>
+                        <button type="button" value="7" id="seven" class="calculator__key calculator__button"></button>
+                        <button type="button" value="8" id="eight" class="calculator__key calculator__button"></button>
+                        <button type="button" value="9" id="nine" class="calculator__key calculator__button"></button>
+                        <button type="button" value="=" class="calculator__key calculator__power"></button>                        <button type="button" value="0" id="zero" class="calculator__key calculator__button"></button>
+                        <button type="button" value="." id="coma" class="calculator__key calculator__button"></button>
+                    </div>
+                    <div class="instruments">
+                        <button type="button" value="+" id="plus"  class="calculator__key calculator__button"></button>
+                        <button type="button" value="-" id="minus"  class="calculator__key calculator__button"></button>
+                        <button type="button" value="*" id="multi"  class="calculator__key calculator__button"></button>
+                        <button type="button" value="/" id="divide" class="calculator__key calculator__button"></button>
+                        <button type="button" value="c" class="calculator__key calculator__clear"></button>
+                        <button type="button" value="<-" class="calculator__key calculator__backspace"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--    ///modal-->
+
+    <div class="modal__window">
+        <div class="modal__window_question">
+            <div class="modal_close">
+                &#x2718;
+            </div>
+            <div class="modal__window_care"></div>
+            <p class="modal__window_text">Видалити файл ?</p>
+            <button type="button" class="modal__window_delete" id="delcar">Видалити</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

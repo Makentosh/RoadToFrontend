@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Road To JavaScript</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="switch"></div>
-            <div class="counter-input">
-                <button type="button" class="btn_min">&#45;</button>
-                <input id="counter" class="counter-place" type="text" min="0" max="3" value="0" pattern="\d+" maxlength="3">
-                <button type="button" class="btn_max">&#43;</button>
-            </div>
+<!--            <div class="counter-input">-->
+<!--                <button type="button" class="btn_min">&#45;</button>-->
+<!--                <input id="counter" class="counter-place" type="text" min="0" max="3" value="0" pattern="\d+" maxlength="3">-->
+<!--                <button type="button" class="btn_max">&#43;</button>-->
+<!--            </div>-->
             <div class="filters">
                 <div class="filters__main">
                     <div class="filters__name">
@@ -46,14 +46,14 @@
                     </div>
                     <div class="filters__sizes">
                         <p class="filters__sizes_text">Розмір</p>
-                        <input class="sizeMin" type="range" min="0" step="1" max="5000" value="0"> 
-                        <input class="sizeMax" type="range" min="0" step="1" max="5000" value="5000">                        
+                        <input class="sizeMin" type="range" min="0" step="1" max="5000" value="0">
+                        <input class="sizeMax" type="range" min="0" step="1" max="5000" value="5000">
                         <p class="filters__sizes_text"><span class="valueMin">0</span> - <span class="valueMax">5000</span></p>
                     </div>
                 </div>
             </div>
-            <div class="upload__items">
-                
+            <div class="upload-items">
+
             </div>
             <div class="button__upload">
                 <button id="button" class="button__upload_btn" name="button" value="Upload">
@@ -71,6 +71,9 @@
             </div>
         </div>
     </header>
+
+
+
     <section class="calculator">
         <div class="container">
             <div class="calculator__content">
@@ -121,7 +124,7 @@
                 <h2>Скільки можна витрачати в день</h2>
                 <input readonly id="priceDay" min="0" max="3"  pattern="\d+">
             </div>
-        </div>   
+        </div>
     </section>
 
 
